@@ -6,8 +6,6 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.webkit.WebChromeClient;
-import android.view.View;
-import android.widget.ProgressBar;
 
 public class MainActivity extends Activity {
 
@@ -34,16 +32,13 @@ public class MainActivity extends Activity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                // Stay inside app for all navigation
                 view.loadUrl(url);
                 return true;
             }
         });
 
         webView.setWebChromeClient(new WebChromeClient());
-
-        // Load local HTML from assets
-        webView.loadUrl("file:///android_asset/index.html");
+        webView.loadUrl("https://animated-jelly-b2b7be.netlify.app");
     }
 
     @Override
